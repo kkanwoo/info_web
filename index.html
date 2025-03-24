@@ -1,110 +1,169 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geon Woo Kim</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        .container {
-            width: 80%;
-            margin: 20px auto;
-            background: white;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1, h2 {
-            color: #333;
-        }
-        .profile {
-            display: flex;
-            align-items: center;
-        }
-        .profile img {
-            width: 150px;
-            height: 180px;
-            margin-right: 20px;
-        }
-        .section {
-            margin-top: 20px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geon Woo Kim</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    .nav {
+      background-color: #333;
+      overflow: hidden;
+    }
+    .nav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    .nav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    .container {
+      width: 80%;
+      margin: 20px auto;
+      background: white;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1, h2 {
+      color: #333;
+    }
+    .profile {
+      display: flex;
+      align-items: center;
+    }
+    .profile img {
+      width: 150px;
+      height: 180px;
+      margin-right: 20px;
+    }
+    .section {
+      margin-top: 20px;
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+  </style>
+  <script>
+    function showTab(tabName) {
+      const contents = document.querySelectorAll('.tab-content');
+      contents.forEach(content => content.classList.remove('active'));
+      document.getElementById(tabName).classList.add('active');
+    }
+    window.onload = () => {
+      showTab('home'); // default tab
+    }
+  </script>
 </head>
 <body>
-    <div class="container">
-        <div class="profile">
-            <a href="image.png" target="_blank">
-                <img src="profile.jpg" alt="Profile Picture">
-            </a>
-            <div>
-                <h1>Geon Woo Kim</h1>
-                <p>Student at Sungkyunkwan University</p>
-                <p>25-2, Seonggyungwan-ro, Jongno-gu, Seoul, Republic of Korea</p>
-                <p>Email: kkanwoo@g.skku.edu</p>
-                <p>Phone: +82 010-6205-5403</p>
-            </div>
-        </div>
-        
-        <div class="section">
-            <h2>Education</h2>
-            <ul>
-                <li>성균관대학교 컴퓨터교육과 (GPA: 4.43 / 4.5) - Mar. 2021 ~ Present</li>
-                Sungkyunkwan University, Department of Computer Education
-                <p></p>
-                <li>성균관대학교 인공지능융합전공 (GPA: 4.5 / 4.5) - Mar. 2022 ~ Present</li>
-                Sungkyunkwan University, Department of Applied Artificial Intelligence 
-            </ul>
-        </div>
-        
-        <div class="section">
-            <h2>Research/Working Experiences</h2>
-            <ul>
-                <li>국군지휘통신사령부 병장 만기전역 (2022. 07 ~ 2024.01) </li>
-                Sergeant at Republic of Korea Defense Communication Command - Microwave Signal Operation (Jul. 2022 ~ Jan. 2024)
-            </ul>
-        </div>
-        
-        <div class="section">
-            <h2>Research Interests</h2>
-            <ul>
-                <li>Artificial Intelligence</li>
-                <li>Information Security</li>
-            </ul>
-        </div>
-        
-        <div class="section">
-            <h2>Awards and Honors</h2>
-            <ul>
-                <li>성균관대학교 러닝페어 소프트웨어융합대학장상</li>
-                Learning Fair Dean's Award, Sungkyunkwan University, College of Computing and Informatics (Dec. 2021)<p></p>
-                <li>2025년도 1학기 성적우수장학금 (상위 3%)</li>
-                2025-1 Academic Scholarship (Top 3%), Sungkyunkwan University (Feb. 2025)
-            </ul>
-        </div>
-        
-        <div class="section">
-            <h2>Projects</h2>
-            <ul>
-                <li>식단 사진을 통한 식단 칼로리 / 영양소 제공 프로그램 (Sep. 2024 ~ Dec. 2024)</li>
-                Calorie-providing program using diet images, Sungkyunkwan University - Introduction to Machine Learning<br>
-                Data preprocessing, modeling <p></p>
-                <li>대학생 시간표 분석기 (Jul. 2024 ~ Dec. 2024)</li>
-                Timetable analysis program, Sungkyunkwan University - Algorithm<br>Algorithm / Main logic development
-            </ul>
-        </div>
-        
-        <div class="section">
-            <h2>Skills and Techniques</h2>
-            <ul>
-                <li>Python</li>
-                <li>C</li>
-            </ul>
+  <div class="nav">
+    <a href="#" onclick="showTab('home')">Home</a>
+    <a href="#" onclick="showTab('cv')">CV</a>
+  </div>
+
+  <div id="home" class="container tab-content">
+    <div class="profile">
+      <a href="image.png" target="_blank">
+        <img src="profile.jpg" alt="Profile Picture">
+      </a>
+      <div>
+        <h1>Geon Woo Kim</h1>
+        <p>Student at Sungkyunkwan University</p>
+        <p>25-2, Seonggyungwan-ro, Jongno-gu, Seoul, Republic of Korea</p>
+        <p>Email: kkanwoo@g.skku.edu</p>
+        <p>Phone: +82 010-6205-5403</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <ul>
+        <li>성균관대학교 컴퓨터교육과 - Mar. 2021 ~ Present</li>
+        Sungkyunkwan University, Department of Computer Education
+        <p></p>
+        <li>성균관대학교 인공지능융합전공 - Mar. 2022 ~ Present</li>
+        Sungkyunkwan University, Department of Applied Artificial Intelligence 
+      </ul>
+    </div>
+  </div>
+
+  <div id="cv" class="container tab-content">
+    <div class="profile">
+        <div>
+            <h1>Geon Woo Kim</h1>
+            <p>Student at Sungkyunkwan University</p>
+            <p>25-2, Seonggyungwan-ro, Jongno-gu, Seoul, Republic of Korea</p>
+            <p>Email: kkanwoo@g.skku.edu</p>
+            <p>Phone: +82 010-6205-5403</p>
         </div>
     </div>
+
+    <div class="section">
+        <h2>Education</h2>
+        <ul>
+            <li>성균관대학교 컴퓨터교육과 (GPA: 4.43 / 4.5) - Mar. 2021 ~ Present</li>
+            Sungkyunkwan University, Department of Computer Education
+            <p></p>
+            <li>성균관대학교 인공지능융합전공 (GPA: 4.5 / 4.5) - Mar. 2022 ~ Present</li>
+            Sungkyunkwan University, Department of Applied Artificial Intelligence 
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Research/Working Experiences</h2>
+        <ul>
+            <li>국군지휘통신사령부 병장 만기전역 (2022. 07 ~ 2024.01) </li>
+            Sergeant at Republic of Korea Defense Communication Command - Microwave Signal Operation (Jul. 2022 ~ Jan. 2024)
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Research Interests</h2>
+        <ul>
+            <li>Artificial Intelligence</li>
+            <li>Information Security</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Awards and Honors</h2>
+        <ul>
+            <li>성균관대학교 러닝페어 소프트웨어융합대학장상</li>
+            Learning Fair Dean's Award, Sungkyunkwan University, College of Computing and Informatics (Dec. 2021)<p></p>
+            <li>2025년도 1학기 성적우수장학금 (상위 3%)</li>
+            2025-1 Academic Scholarship (Top 3%), Sungkyunkwan University (Feb. 2025)
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Projects</h2>
+        <ul>
+            <li>식단 사진을 통한 식단 칼로리 / 영양소 제공 프로그램 (Sep. 2024 ~ Dec. 2024)</li>
+            Calorie-providing program using diet images, Sungkyunkwan University - Introduction to Machine Learning<br>
+            Data preprocessing, modeling <p></p>
+            <li>대학생 시간표 분석기 (Jul. 2024 ~ Dec. 2024)</li>
+            Timetable analysis program, Sungkyunkwan University - Algorithm<br>Algorithm / Main logic development
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Skills and Techniques</h2>
+        <ul>
+            <li>Python</li>
+            <li>C</li>
+        </ul>
+    </div>
+</div>
 </body>
 </html>
